@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="909.0" style="-fx-background-color: DCDCDC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ratatouille.TableauDeBord_Controller">
+   <children>
+      <AnchorPane layoutX="230.0" layoutY="35.0" prefHeight="132.0" prefWidth="671.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;">
+         <children>
+            <AnchorPane layoutX="6.0" layoutY="8.0" prefHeight="108.0" prefWidth="157.0" style="-fx-background-color: #3cdccd; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="11.0" layoutY="7.0" prefHeight="55.0" prefWidth="135.0" text="Nombre de commandes mensuelles" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                  <Label fx:id="nbCommandesMensuelles" layoutX="76.0" layoutY="63.0" text="0" textFill="WHITE" wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="169.0" layoutY="8.0" prefHeight="108.0" prefWidth="157.0" style="-fx-background-color: #3cdccd; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="9.0" layoutY="8.0" prefHeight="55.0" prefWidth="135.0" text="Nombre de produits en stock" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                  <Label fx:id="nbProduitsStock" layoutX="74.0" layoutY="69.0" text="0" textFill="WHITE" wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="334.0" layoutY="9.0" prefHeight="105.0" prefWidth="157.0" style="-fx-background-color: #3cdccd; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="10.0" layoutY="8.0" prefHeight="55.0" prefWidth="135.0" text="Chiffre d'affaire mensuel" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                  <Label fx:id="nbCaM" layoutX="73.0" layoutY="67.0" text="0" textFill="WHITE" wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="502.0" layoutY="10.0" prefHeight="105.0" prefWidth="157.0" style="-fx-background-color: #3cdccd; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" prefHeight="55.0" prefWidth="135.0" text="Chiffre d'affaire annuel" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                  <Label fx:id="nbCaA" layoutX="75.0" layoutY="66.0" text="0" textFill="WHITE" wrapText="true" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <AnchorPane layoutX="20.0" layoutY="226.0" prefHeight="506.0" prefWidth="187.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <children>
+            <Button fx:id="acceuilButton" layoutX="17.0" layoutY="19.0" mnemonicParsing="false" onAction="#acceuilButtonClick" prefHeight="78.0" prefWidth="157.0" style="-fx-border-color: black; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Acceuil">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="tableauDeBordButton" alignment="CENTER" layoutX="16.0" layoutY="111.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #3cdccd;" text="Tableau de Bord" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="produitsButton" layoutX="17.0" layoutY="205.0" mnemonicParsing="false" onAction="#produitsButtonClick" prefHeight="78.0" prefWidth="157.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="Produits">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="commandesButton" layoutX="17.0" layoutY="298.0" mnemonicParsing="false" onAction="#commandesButtonClick" prefHeight="78.0" prefWidth="157.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Commandes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="quitter" layoutX="22.0" layoutY="432.0" mnemonicParsing="false" onAction="#quitterButtonClick" prefHeight="60.0" prefWidth="147.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: white;" text="Quitter">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <FontIcon iconColor="#e43a3a" iconLiteral="fa-sign-out" layoutX="49.0" layoutY="469.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontIcon>
+         </children>
+      </AnchorPane>
+      <StackedBarChart layoutX="212.0" layoutY="190.0" prefHeight="235.0" prefWidth="340.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </StackedBarChart>
+      <StackedBarChart layoutX="560.0" layoutY="192.0" prefHeight="235.0" prefWidth="340.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </StackedBarChart>
+      <StackedBarChart layoutX="217.0" layoutY="486.0" prefHeight="235.0" prefWidth="340.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </StackedBarChart>
+      <StackedBarChart layoutX="568.0" layoutY="485.0" prefHeight="235.0" prefWidth="340.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </StackedBarChart>
+      <Separator layoutX="565.0" layoutY="169.0" orientation="VERTICAL" prefHeight="633.0" prefWidth="5.0" />
+      <Separator layoutX="227.0" layoutY="445.0" prefHeight="0.0" prefWidth="682.0" />
+      <AnchorPane layoutX="26.0" layoutY="28.0" prefHeight="178.0" prefWidth="175.0" style="-fx-background-color: #3cdccd; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <children>
+            <FontIcon iconColor="WHITE" iconLiteral="fa-users" layoutX="50.0" layoutY="74.0">
+               <font>
+                  <Font size="70.0" />
+               </font>
+            </FontIcon>
+            <Label fx:id="bienvenue_Text" layoutX="48.0" layoutY="101.0" text="Bienvenue" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="14.0" layoutY="213.0" prefWidth="200.0" />
+      <Separator layoutX="214.0" layoutY="1.0" orientation="VERTICAL" prefHeight="729.0" prefWidth="6.0" />
+   </children>
+</Pane>
