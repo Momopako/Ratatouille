@@ -68,19 +68,19 @@
       <AnchorPane layoutX="240.0" layoutY="7.0" prefHeight="724.0" prefWidth="606.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;">
          <children>
             <FontIcon iconColor="#0000009b" iconLiteral="fa-search" iconSize="40" layoutX="42.0" layoutY="48.0" onMouseClicked="#searchButtonClick" text="" wrappingWidth="37.60796837029636" />
-            <TextField fx:id="nomProduitSearch_Text" layoutX="97.0" layoutY="20.0" prefHeight="43.0" prefWidth="477.0" promptText="Nom du produit" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;">
+            <TextField fx:id="nomCommandeSearch_Text" layoutX="97.0" layoutY="20.0" prefHeight="43.0" prefWidth="477.0" promptText="Nom du produit" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <TableView editable="true" layoutX="6.0" layoutY="78.0" prefHeight="644.0" prefWidth="598.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: white;">
+            <TableView fx:id="tableauCommande" editable="true" layoutX="6.0" layoutY="78.0" prefHeight="644.0" prefWidth="598.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" stylesheets="@style.css">
                <columns>
-                  <TableColumn prefWidth="88.30265808105469" style="-fx-backgroung-color: blue;" text="Ref" />
-                  <TableColumn prefWidth="111.1973876953125" text="Date" />
-                  <TableColumn prefWidth="128.08688354492188" text="NomProduit" />
-                  <TableColumn prefWidth="110.46319580078125" text="PU" />
-                  <TableColumn prefWidth="81.481689453125" text="Qte" />
-                  <TableColumn prefWidth="113.160400390625" text="total" />
+                  <TableColumn fx:id="colonneRefCommande" prefWidth="88.30265808105469" text="Ref" />
+                  <TableColumn fx:id="colonneDateCommande" prefWidth="111.1973876953125" text="Date" />
+                  <TableColumn fx:id="colonneNomCommande" prefWidth="128.08688354492188" text="NomProduit" />
+                  <TableColumn fx:id="colonnePuCommande" prefWidth="84.5" text="PU" />
+                  <TableColumn fx:id="colonneQuantiteCommande" prefWidth="91.5" text="Qte" />
+                  <TableColumn prefWidth="89.5" text="total" />
                </columns>
             </TableView>
          </children>
@@ -88,24 +88,24 @@
       <AnchorPane layoutX="875.0" layoutY="5.0" prefHeight="731.0" prefWidth="368.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;">
          <children>
             <TextField fx:id="refCommande_Text" layoutX="158.0" layoutY="41.0" prefHeight="49.0" prefWidth="187.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-            <TextField fx:id="prixProduit_Text" layoutX="119.0" layoutY="271.0" prefHeight="49.0" prefWidth="187.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-            <ChoiceBox fx:id="NomProduit" layoutX="119.0" layoutY="191.0" prefHeight="53.0" prefWidth="188.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black;" />
-            <Button layoutX="35.0" layoutY="557.0" mnemonicParsing="false" onAction="#ajouterButtonClick" prefHeight="73.0" prefWidth="108.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: #0b9fff;" text="Ajouter">
+            <TextField fx:id="quantiteCommande_Text" layoutX="119.0" layoutY="271.0" prefHeight="49.0" prefWidth="187.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+            <ChoiceBox fx:id="NomProduit_Commande" layoutX="119.0" layoutY="191.0" prefHeight="53.0" prefWidth="188.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black;" />
+            <Button layoutX="31.0" layoutY="556.0" mnemonicParsing="false" onAction="#ajouterButtonClick" prefHeight="75.0" prefWidth="113.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: #0b9fff;" text="Ajouter">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="173.0" layoutY="552.0" mnemonicParsing="false" onAction="#majButtonClick" prefHeight="80.0" prefWidth="113.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: #07CC07FF;" text="Mettre à jour">
+            <Button layoutX="176.0" layoutY="556.0" mnemonicParsing="false" onAction="#majButtonClick" prefHeight="75.0" prefWidth="108.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: #07CC07FF;" text="Mettre à jour">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="33.0" layoutY="638.0" mnemonicParsing="false" onAction="#effacerButtonClick" prefHeight="75.0" prefWidth="108.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: yellow;" text="Effacer">
+            <Button layoutX="31.0" layoutY="639.0" mnemonicParsing="false" onAction="#effacerButtonClick" prefHeight="70.0" prefWidth="113.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: yellow;" text="Effacer">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="177.0" layoutY="636.0" mnemonicParsing="false" onAction="#supprimerButtonClick" prefHeight="75.0" prefWidth="108.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: #f13838;" text="Supprimer">
+            <Button layoutX="177.0" layoutY="639.0" mnemonicParsing="false" onAction="#supprimerButtonClick" prefHeight="70.0" prefWidth="108.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-background-color: #f13838;" text="Supprimer">
                <font>
                   <Font size="16.0" />
                </font>
@@ -130,7 +130,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <DatePicker layoutX="162.0" layoutY="113.0" prefHeight="50.0" prefWidth="182.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black;" />
+            <DatePicker fx:id="dateCommande_Text" layoutX="162.0" layoutY="113.0" prefHeight="50.0" prefWidth="182.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black;" />
             <Button layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#payerButtonClick" prefHeight="48.0" prefWidth="84.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #0b9fff;" text="Payer">
                <font>
                   <Font size="20.0" />

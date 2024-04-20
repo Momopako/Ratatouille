@@ -56,5 +56,4 @@ public class GestionVue {
         GestionVue.commandes = commandes;
     }
 
-
 }

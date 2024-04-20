@@ -12,7 +12,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="862.0" style="-fx-background-color: DCDCDC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ratatouille.Acceuil_Controller">
    <children>
-      <AnchorPane layoutX="246.0" layoutY="134.0" prefHeight="541.0" prefWidth="546.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;">
+      <AnchorPane layoutX="272.0" layoutY="126.0" prefHeight="541.0" prefWidth="546.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;">
          <children>
             <FontIcon iconColor="#3cdccd" iconLiteral="fa-users" layoutX="222.0" layoutY="178.0" wrappingWidth="114.47567039784838">
                <font>
@@ -31,16 +31,26 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Button fx:id="acceuilButton1" layoutX="206.0" layoutY="411.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="137.0" style="-fx-border-color: black; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #3cdccd;" text="Se Connecter" textFill="WHITE">
+            <Button fx:id="SeConnecter" layoutX="106.0" layoutY="411.0" mnemonicParsing="false" onAction="#SeConnecterButtonClick" prefHeight="22.0" prefWidth="137.0" style="-fx-border-color: black; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #3cdccd;" text="Se Connecter" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <FontIcon fontSmoothingType="LCD" iconColor="#e43a3a" iconLiteral="fa-unlock" layoutX="402.0" layoutY="351.0" textAlignment="CENTER">
+            <FontIcon fx:id="lockIcon" fontSmoothingType="LCD" iconColor="#e43a3a" iconLiteral="fa-lock" layoutX="402.0" layoutY="351.0" textAlignment="CENTER">
                <font>
                   <Font size="57.0" />
                </font>
             </FontIcon>
+            <Label fx:id="Bienvenue_Text" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="225.0" prefHeight="28.0" prefWidth="451.0" text="Bienvenue">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="CreerCompte" layoutX="290.0" layoutY="411.0" mnemonicParsing="false" onAction="#CreerCompteButtonClick" prefHeight="22.0" prefWidth="137.0" style="-fx-border-color: black; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #3cdccd;" text="Créer Compte" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
       <AnchorPane layoutX="20.0" layoutY="226.0" prefHeight="506.0" prefWidth="187.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
          <children>
@@ -54,12 +64,12 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="produitButton" layoutX="17.0" layoutY="205.0" mnemonicParsing="false" onAction="#produitsButtonClick" prefHeight="78.0" prefWidth="157.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="Produits">
+            <Button fx:id="produitsButton" alignment="CENTER" layoutX="17.0" layoutY="205.0" mnemonicParsing="false" onAction="#produitsButtonClick" prefHeight="78.0" prefWidth="157.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="Produits">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="commandesButton" layoutX="17.0" layoutY="298.0" mnemonicParsing="false" onAction="#commandesButtonClick" prefHeight="78.0" prefWidth="157.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Commandes">
+            <Button fx:id="commandesButton" alignment="CENTER" layoutX="17.0" layoutY="298.0" mnemonicParsing="false" onAction="#commandesButtonClick" prefHeight="78.0" prefWidth="157.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Commandes">
                <font>
                   <Font size="18.0" />
                </font>
@@ -78,16 +88,13 @@
       </AnchorPane>
       <AnchorPane layoutX="24.0" layoutY="29.0" prefHeight="178.0" prefWidth="175.0" style="-fx-background-color: #3cdccd; -fx-background-radius: 10; -fx-border-radius: 10;">
          <children>
-            <FontIcon iconColor="WHITE" iconLiteral="fa-users" layoutX="50.0" layoutY="74.0">
+            <FontIcon iconColor="WHITE" iconLiteral="fa-users" layoutX="50.0" layoutY="74.0" textAlignment="CENTER">
                <font>
                   <Font size="70.0" />
                </font>
             </FontIcon>
-            <Label fx:id="bienvenue_Text" layoutX="48.0" layoutY="101.0" text="Bienvenue" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
+            <Label alignment="CENTER" layoutX="59.0" layoutY="96.0" text="Bienvenue" textAlignment="CENTER" textFill="WHITE" />
+            <Label fx:id="bienvenue_Text" alignment="CENTER" layoutX="54.0" layoutY="113.0" prefHeight="17.0" prefWidth="68.0" textAlignment="CENTER" textFill="WHITE" />
          </children>
       </AnchorPane>
       <Separator layoutX="223.0" layoutY="14.0" orientation="VERTICAL" prefHeight="752.0" prefWidth="7.0" />

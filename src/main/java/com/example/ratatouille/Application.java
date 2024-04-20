@@ -4,12 +4,10 @@ package com.example.ratatouille;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import modele.GestionAcceuil;
-import modele.GestionCommande;
-import modele.GestionProduit;
-import modele.GestionVue;
+import modele.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Application extends javafx.application.Application {
 
@@ -17,7 +15,8 @@ public class Application extends javafx.application.Application {
 
     private static Stage stagePricipal;
 
-    public  void  init() throws IOException{
+    public  void  init() throws IOException, SQLException, ClassNotFoundException {
+        GestionDataBase gestionDataBase = new GestionDataBase();
         GestionAcceuil gestionAcceuil = new GestionAcceuil();
         GestionProduit gestionProduit = new GestionProduit();
         GestionCommande gestionCommande =new GestionCommande();
@@ -27,7 +26,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("acceuil-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1093, 754);
-        stage.setTitle("Acceuil");
+        stage.setTitle("Ratatouille");
         stage.setScene(scene);
         stage.show();
         stagePricipal = stage;

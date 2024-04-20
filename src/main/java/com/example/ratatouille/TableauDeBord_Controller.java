@@ -61,6 +61,4 @@ public class TableauDeBord_Controller {
     Application.getStagePricipal().setScene(scene);
     Application.getStagePricipal().show();
    }
-
-
 }
